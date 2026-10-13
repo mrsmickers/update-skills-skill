@@ -14,8 +14,10 @@ Work the steps in order. Create a todo per step.
 ```
 cat ~/.claude/projects/<project-slug>/memory/MEMORY.md
 ls ~/.claude/projects/<project-slug>/memory/
-ls ~/.claude/skills/
+ls ~/.claude/skills/ .claude/skills/ 2>/dev/null
 ```
+
+`<project-slug>` is the working directory with every `/` replaced by `-`, so `/home/me/Projects/app` becomes `-home-me-Projects-app`. Also read the project's `AGENTS.md` or `CLAUDE.md`, whichever it has.
 
 You cannot judge what is new until you know what is already recorded.
 
@@ -33,7 +35,7 @@ Scan the whole session for:
 
 Do not save:
 
-- Anything already in the repo, git history, CLAUDE.md or an existing skill.
+- Anything already in the repo, git history, AGENTS.md, CLAUDE.md or an existing skill.
 - Task state that dies with this chat.
 - General knowledge about how a public tool works.
 - Vague impressions with no action attached.
@@ -56,7 +58,7 @@ Convert every relative date to an absolute one. Record the state as it actually 
 
 - **Memories**: one fact per file, frontmatter, correct `type` (`user` / `feedback` / `project` / `reference`), `[[links]]` to related memories. Add the one-line pointer to `MEMORY.md`.
 - **Skills**: edit the specific section. Small surgical changes, not rewrites. A new skill only when the session revealed a repeatable multi-step procedure, never for a single fact.
-- **Working files**: project `working/` folder, descriptive kebab-case names, per CLAUDE.md. Move anything worth keeping out of `/tmp` or the scratchpad before the session ends.
+- **Working files**: wherever the project's `AGENTS.md` or `CLAUDE.md` says, or a `working/` folder in the project if it says nothing. Use descriptive kebab-case names. Move anything worth keeping out of `/tmp` or the scratchpad before the session ends.
 
 ## 7. Report, briefly
 
