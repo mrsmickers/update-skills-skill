@@ -26,14 +26,14 @@ do". If you would rather do it by hand, the same commands work.
 Work through this in order. Report what you did and stop at the first
 step that needs the user.
 
-**1. Find the skills folder for the harness you are running in.**
+**1. Find the skills folder for the tool you are running in.**
 
-| Harness | Folder |
-|---|---|
+| Tool | Folder |
+|------|---|
 | Claude Code | `~/.claude/skills/` |
 | Codex | `~/.codex/skills/` |
 | OpenClaw | `~/clawd/skills/` |
-| Any other AgentSkills harness | its own skills folder |
+| Any other AgentSkills tool | its own skills folder |
 | Claude Desktop or Cowork | no folder; see step 6 |
 
 **2. Check the prerequisite.**
@@ -48,7 +48,7 @@ macOS, `sudo apt install git` on Ubuntu) and stop.
 **3. Clone into a folder named exactly `update-skills`.**
 
 The folder name is not cosmetic. A skill's `name:` must match its folder
-or the harness will not load it. The repository is called
+or the tool will not load it. The repository is called
 `update-skills-skill`, so the destination must be given explicitly.
 Substitute the folder from step 1 for `~/.claude/skills`.
 
@@ -67,7 +67,7 @@ head -3 ~/.claude/skills/update-skills/SKILL.md
 
 Expect `---` followed by `name: update-skills`.
 
-**5. Tell the user to restart their harness**, because skills are read at
+**5. Tell the user to restart their tool**, because skills are read at
 startup. Then give them the smoke test below.
 
 **6. Claude Desktop or Cowork only.** There is no skills folder. The user
@@ -80,16 +80,16 @@ tar -czf update-skills.tar.gz --exclude=.git -C ~/.claude/skills update-skills
 
 ### What only you can do
 
-1. **Restart the harness.** Quit and reopen Claude Code, or your other
-   harness, so it picks up the new skill.
+1. **Restart the tool.** Quit and reopen Claude Code, or your other
+   tool, so it picks up the new skill.
 
 ### If it does not work
 
 | What you see | Why | Fix |
 |---|---|---|
 | `destination path 'update-skills' already exists` | A copy is already installed | `git -C ~/.claude/skills/update-skills pull --ff-only` |
-| Skill never triggers | Folder misnamed, or harness not restarted | Folder must be `update-skills` exactly; restart the harness |
-| It saves skills and working files but no memories | Your harness has no memory folder at the path in step 1 of `SKILL.md` | Tell it where memories live in your `AGENTS.md`, or accept skills-only updates |
+| Skill never triggers | Folder misnamed, or tool not restarted | Folder must be `update-skills` exactly; restart the tool |
+| It saves skills and working files but no memories | Your tool has no memory folder at the path in step 1 of `SKILL.md` | Tell it where memories live in your `AGENTS.md`, or accept skills-only updates |
 
 ### Keeping it current
 
@@ -131,10 +131,10 @@ should say there is nothing worth saving.
 - Create a new skill for a single fact. New skills are only for a
   repeatable multi-step procedure.
 
-### Harness support
+### Tool support
 
 It is built for Claude Code and reads and writes Claude Code's memory
-folder, `~/.claude/projects/<project-slug>/memory/`. In other harnesses
+folder, `~/.claude/projects/<project-slug>/memory/`. In other tools
 the skill, working-file and reporting steps work as written; the memory
 steps need you to say where memories live.
 
