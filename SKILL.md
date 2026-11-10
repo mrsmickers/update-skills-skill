@@ -57,6 +57,7 @@ Convert every relative date to an absolute one. Record the state as it actually 
 ## 6. Write
 
 - **Memories**: one fact per file, frontmatter, correct `type` (`user` / `feedback` / `project` / `reference`), `[[links]]` to related memories. Add the one-line pointer to `MEMORY.md`.
+- **Skills first for anything another Claude needs.** Simon also runs Claude on the ingagent VM, which loads the shared skills but not this Mac's memory folder. Every rule, preference or fact that changes how work gets done goes into the skill that does that work; a memory alone reaches only this machine. Keep the memory too, and point it at the skill section that now holds the rule (Simon, 10 Nov 2026).
 - **Skills**: edit the specific section. Small surgical changes, not rewrites. A new skill only when the session revealed a repeatable multi-step procedure, never for a single fact.
 - **Working files**: wherever the project's `AGENTS.md` or `CLAUDE.md` says, or a `working/` folder in the project if it says nothing. Use descriptive kebab-case names. Move anything worth keeping out of `/tmp` or the scratchpad before the session ends.
 
